@@ -763,7 +763,7 @@ input[type=date] {
 }
 
 select {
-    background-image: url(../images/graphics/select-icon.svg);
+    background-image: url(../img/common/select-icon.svg);
     background-position: calc(100% - 15px) center;
     background-repeat: no-repeat;
     text-indent: 0;
@@ -7698,7 +7698,7 @@ body.rtl #grve-side-area {
 }
 
 #grve-theme-wrapper .gform_wrapper select {
-    background-image: url(../images/graphics/select-icon.svg);
+    background-image: url(../img/common/select-icon.svg);
     background-position: calc(100% - 15px) center;
     background-repeat: no-repeat;
     text-indent: 0;
