@@ -1,0 +1,82 @@
+:root {
+    --slideHeight: 60vh;
+    --galleryMobileHeight: 40vh;
+    --slideMobileHeight: 70vh;
+    --heroColour: #7edeff;
+    --heroColour: #7833fa;
+
+    --accent-colour: #A71BCE;
+    --accent-colour-rgb: 167, 27, 206;
+    --accent-secondary: #7833fa;
+    --primary-colour: #063A95;
+    --accent-light: #A584FF;
+    /* #9c27b0 */
+    /* #7833fa */
+    /* #A71BCE */
+}
+
+.mb-0{
+    margin-bottom: 0 !important;
+}
+
+.mb-1{
+    margin-bottom: 1rem !important;
+}
+
+::selection {
+    background: var(--accent-colour);
+    color: #fff;
+}
+
+.loadingScreen {
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99999;
+    background-color: #000000;
+    display: block;
+}
+
+.frostedBlur {
+    margin: 1rem;
+    background: rgba(126, 223, 255, 0.116);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border-radius: 8px;
+}
+
+.frostedBlurOnly {
+    background: rgba(126, 223, 255, 0.116);
+    backdrop-filter: blur(10.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+}
+
+
+.mOnly,
+.nonDisplay {
+    display: none;
+}
+
+.nonDisplay {
+    display: none !important;
+}
+
+
+/* @media only screen and (min-device-width: 320px) and (max-device-width: 768px) { */
+/* @media screen and ((max-width: 768px) or (max-device-width: 768px)) { */
+@media (orientation: portrait) {
+    .dOnly {
+        display: none !important;
+    }
+
+    .mOnly {
+        display: block;
+    }
+
+    .mHide {
+        opacity: 0;
+    }
+
+    
+}
