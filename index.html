@@ -120,6 +120,13 @@
 			#grve-main-header.grve-skin-sticky:not(.grve-layout-top-bottom),
 			#grve-main-header.grve-skin-sticky {
 				background-color: transparent;
+				background-color: rgba(0, 0, 0, 0.712);
+			}
+
+			#grve-main-header.grve-skin-sticky .grve-header-elements .grve-header-text-element,
+			#grve-main-header.grve-skin-sticky .grve-link-wrapper a,
+			#grve-main-header.grve-skin-sticky .grve-horizontal-menu:not(.grve-menu-element)>.grve-menu>li>.grve-link-wrapper a {
+				color: #fff;
 			}
 		}
 
@@ -507,10 +514,12 @@
 	<div id="grve-theme-wrapper" class="grve-skin-custom grve-section-nav-hide-never">
 
 		<header id="grve-header">
-			<!-- <div id="grve-main-header" class="grve-layout-default grve-style-2 grve-fullwidth grve-skin-light grve-scrollup-sticky grve-menu-type-underline" data-sticky="scrollup" data-sticky-height="60" data-header-skin="light"> -->
 			<div id="grve-main-header"
-				class="grve-layout-default grve-style-2 grve-fullwidth grve-skin-light grve-sticky grve-menu-type-underline"
+				class="grve-layout-default grve-style-2 grve-fullwidth grve-skin-light grve-scrollup-sticky grve-menu-type-underline"
 				data-sticky="scrollup" data-sticky-height="60" data-header-skin="light">
+				<!-- <div id="grve-main-header"
+				class="grve-layout-default grve-style-2 grve-fullwidth grve-skin-light grve-sticky grve-menu-type-underline"
+				data-sticky="scrollup" data-sticky-height="60" data-header-skin="light"> -->
 				<div class="grve-header-row">
 					<div class="grve-left-area">
 
@@ -1710,7 +1719,7 @@
 																						data-name="university">
 
 																						<!-- placeholder -->
-																						
+
 																						<select name="university"
 																							class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
 																							autocomplete="off"
@@ -1719,7 +1728,8 @@
 																							placeholder="University *">
 
 																							<!-- placeholder -->
-																							<option value="" disabled selected>University
+																							<option value="" disabled
+																								selected>University
 																								*</option>
 																							<option
 																								value="University of Colombo School of Computing">
@@ -1782,7 +1792,8 @@
 																							</option>
 																							<option
 																								value="University of Vocational Technology">
-																								University of Vocational Technology</option>
+																								University of Vocational
+																								Technology</option>
 																							<option
 																								value="South Eastern University of Sri Lanka">
 																								South Eastern University
@@ -1803,7 +1814,8 @@
 																								Lanka</option>
 																							<option
 																								value="Informatics Institute of Technology">
-																								Informatics Institute of Technology</option>
+																								Informatics Institute of
+																								Technology</option>
 																							<option
 																								value="Sri Lanka Technological Campus">
 																								Sri Lanka Technological
@@ -2407,11 +2419,11 @@
 
 				// if university is other
 				if (values['university'] == "other") {
-					if (values['university_name'] == "") 
-						return(alertUser("warning", "Please enter the name of the university"));
+					if (values['university_name'] == "")
+						return (alertUser("warning", "Please enter the name of the university"));
 					values['university'] = values['university_name'];
 				}
-				
+
 				delete values['university_name'];
 
 				// console.log(values)
