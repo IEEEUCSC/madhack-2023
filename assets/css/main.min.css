@@ -15,11 +15,11 @@
     /* #A71BCE */
 }
 
-.mb-0{
+.mb-0 {
     margin-bottom: 0 !important;
 }
 
-.mb-1{
+.mb-1 {
     margin-bottom: 1rem !important;
 }
 
@@ -53,13 +53,14 @@
 }
 
 
-.mOnly,
-.nonDisplay {
-    display: none;
-}
-
 .nonDisplay {
     display: none !important;
+}
+
+@media (orientation: landscape) {
+    .mOnly {
+        display: none !important;
+    }
 }
 
 
@@ -70,13 +71,13 @@
         display: none !important;
     }
 
-    .mOnly {
+    /* .mOnly {
         display: block;
-    }
+    } */
 
     .mHide {
         opacity: 0;
     }
 
-    
+
 }
