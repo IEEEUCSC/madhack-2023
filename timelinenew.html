@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" type="image/png"
+        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
+        color="#111" />
+
+
+
+    <title>CodePen - timeline</title>
+
+
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/common.css">
+    <link rel="stylesheet" href="./assets/css/main.min.css">
+    <link rel='stylesheet' href='https://unpkg.com/aos@2.3.0/dist/aos.css'>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .m-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1.boxedH1 {
+            font-size: calc(3rem * 10vw);
+            position: relative;
+            padding: 1rem 1.5rem;
+            background: #fff;
+            /* border: 3px solid var(--accent-primary); */
+            width: max-content;
+            /* z-index: 1; */
+            transform-style: preserve-3d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1.boxedH1:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 4px;
+            top: 4px;
+            border: 3px solid;
+            background: #0a0a0a;
+            background: var(--accent-primary);
+            transform: translateZ(-1px);
+        }
+
+        section.timeline {
+            margin-bottom: 10em;
+            max-width: 100vw;
+            /* overflow: hidden; */
+        }
+
+        .timelineCont h2 {
+            font-weight: bold;
+            width: max-content;
+            position: relative;
+            /* color: #0a0a0a; */
+            z-index: 1;
+        }
+
+        .timelineCont h2::before {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 0;
+            bottom: 10px;
+            z-index: -1;
+            width: 100%;
+            height: 20px;
+            background-color: #84ffc9;
+            background: var(--accent-primary);
+        }
+
+        .timelineCont {
+            position: relative;
+            margin-right: 2em;
+            margin-left: 2em;
+            height: fit-content;
+        }
+
+
+        .timelineCont::after {
+            content: "";
+            position: absolute;
+            left: -2em;
+            right: 0;
+            top: -3em;
+            bottom: 3em;
+            border-radius: 2px;
+            width: 12px;
+            background: var(--accent-primary);
+        }
+
+
+
+        .timelineCont .timelineContent {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 4em;
+            color: #FFF;
+        }
+
+        .timelineCont .timelineContent span {
+            position: relative;
+            padding: 0.5em 1em;
+            margin-left: 0em;
+            z-index: 3;
+            /* background: #84ffc9;
+            border-radius: 50px;
+            border: 3px solid #0a0a0a; */
+
+            /* background: #84ffc9; */
+            border-radius: 2px;
+            border: 1px solid #fff;
+            font-weight: bold;
+        }
+
+        .timelineCont .timelineContent span::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 3px solid var(--accent-primary);
+            background: #000;
+            left: calc(-2em - 6px);
+            z-index: 2;
+            border-radius: 20px;
+        }
+
+        .timelineCont .timelineContent article {
+            margin-top: 1.5em;
+            /* background-color: #ffffffa9; */
+            margin-bottom: 2em;
+            position: relative;
+            padding: 0.5em 0.7em;
+            transform-style: preserve-3d;
+        }
+
+        @media screen and (min-width: 922px) {
+
+            .timelineCont::after {
+                left: 50%;
+                left: calc(50% - 7px);
+            }
+
+
+            .timelineCont .timelineContent {
+                max-width: 45%;
+                position: unset;
+            }
+
+            .timelineCont .timelineContent.left {
+                align-items: flex-end;
+            }
+
+            .timelineCont .timelineContent.right {
+                margin-right: -2em;
+                margin-left: auto;
+                position: unset;
+            }
+
+            .timelineCont .timelineContent.right span {
+                position: unset;
+            }
+
+            .timelineCont .timelineContent.right span::before {
+                left: calc(50% - 10px);
+            }
+
+            .timelineCont .timelineContent span {
+                position: unset;
+                margin-top: -1.5em;
+            }
+
+            .timelineCont .timelineContent span::before {
+                left: calc(50% - 3px);
+                left: calc(50% - 10px);
+            }
+
+        }
+
+        @media screen and (min-width: 768px) {
+            .timelineCont {
+                margin-left: 6em;
+                margin-right: 6em;
+            }
+
+
+            .timelineCont .timelineContent article {
+                padding: 1em 2em;
+            }
+
+
+        }
+
+        @media screen and (min-width: 768px) and (min-width: 922px) {
+            .timelineCont {
+                max-width: calc((80vw / 4) * 4);
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .timelineCont .timelineContent article {
+                position: absolute;
+            }
+
+            section.faq .faqAccordion {
+                max-width: calc((65vw / 4) * 4);
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body translate="no">
+
+    <section style="height: 100vh;"></section>
+
+    <section class="timeline" id="sectionTimeline">
+        <div class="timelineCont">
+            <h1 class="m-auto boxedH1 aboveProgess" style="z-index: 2;">Timeline</h1>
+            <div class="timelineContent left">
+                <span>June 1<sup>st</sup> </span>
+                <article>
+                    <h2>Launch Event</h2>
+                    <p>We will be officially kicking off and opening registrations. Join our events and stay
+                        connected
+                        with our social media to know the latest updates. See you soon
+                    </p>
+                </article>
+            </div>
+
+            <div class="timelineContent right">
+                <span>June 13<sup>th</sup> </span>
+                <article>
+                    <h2>Workshop I</h2>
+                    <p>Conducted by one of our knowledge partners to give you an intro to mobile application
+                        development
+                        and give
+                        you a head start. Those who wish to enter must register beforehand. Don't brain lag :P
+                    </p>
+                </article>
+            </div>
+
+            <div class="timelineContent left">
+                <span>June 27<sup>th</sup> </span>
+                <article>
+                    <h2>Workshop II</h2>
+                    <p>Conducted by one of our knowledge partners to give you an intro to mobile application
+                        development
+                        and give
+                        you a head start. Those who wish to enter must register beforehand. Don't brain lag :P
+                    </p>
+                </article>
+            </div>
+
+            <div class="timelineContent right">
+                <span>July 17<sup>th</sup> </span>
+                <article>
+                    <h2>Workshop III</h2>
+                    <p>Conducted by one of our knowledge partners to give you an intro to mobile application
+                        development
+                        and give
+                        you a head start. Those who wish to enter must register beforehand. Don't brain lag :P
+                    </p>
+                </article>
+            </div>
+
+            <div class="timelineContent left">
+                <span>July 25<sup>th</sup> </span>
+                <article>
+                    <h2>Idea Stage Closes</h2>
+                    <p>The Idea stage is when the proposal submissions are called. Participants are allowed to
+                        choose
+                        any
+                        topic and
+                        category of choice to focus on in their proposal. Please note that it is not allowed to
+                        submit a
+                        proposal
+                        that has already been submitted to a competition before. Doing so will result in an
+                        immediate
+                        disqualification from the competition.
+                    </p>
+                </article>
+            </div>
+
+            <div class="timelineContent right">
+                <span>August 1<sup>st</sup> </span>
+                <article>
+                    <h2>Proposal Evaluation Stage</h2>
+                    <p>The proposal submitted during the idea stage will be evaluated during this period and the
+                        finalists
+                        will be announced on the 1st of August
+                    </p>
+                </article>
+            </div>
+
+            <div class="timelineContent left">
+                <span>August 15<sup>th</sup> </span>
+                <article>
+                    <h2>Development Stage</h2>
+                    <p>The top 10 teams from the idea stage will be announced as finalists and they will be advanced
+                        to
+                        the development stage. All finalists will be allocated a period of one week for developing
+                        the
+                        app and each team will be assigned a mentor that will guide and evaluate them throughout
+                        this
+                        week.
+                    </p>
+                </article>
+            </div>
+
+            <div class="timelineContent right">
+                <span>August 31<sup>st</sup> </span>
+                <article>
+                    <h2>Final Stage</h2>
+                    <p>This is the final stage of the competition. In this stage, each team will be given 20 minutes
+                        to
+                        pitch their product to the judges out of which 15 mins will be allocated for the
+                        presentation
+                        and
+                        5 mins for the Q & A. Judging Criteria for the Final Stage :
+                        Final score = UI + UX + Usefulness + Availability
+                    </p>
+                </article>
+            </div>
+
+        </div>
+
+        <style>
+            .m-auto {
+                margin-left: auto;
+                margin-right: auto;
+            }
+    
+            h1.boxedH1 {
+                font-size: calc(3rem * 10vw);
+                position: relative;
+                padding: 1rem 1.5rem;
+                background: #fff;
+                /* border: 3px solid var(--accent-primary); */
+                width: max-content;
+                /* z-index: 1; */
+                transform-style: preserve-3d;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+    
+            h1.boxedH1:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 4px;
+                top: 4px;
+                border: 3px solid;
+                background: #0a0a0a;
+                background: var(--accent-primary);
+                transform: translateZ(-1px);
+            }
+    
+            section.timeline {
+                margin-bottom: 10em;
+                max-width: 100vw;
+                /* overflow: hidden; */
+            }
+    
+            .timelineCont h2 {
+                font-weight: bold;
+                width: max-content;
+                position: relative;
+                /* color: #0a0a0a; */
+                z-index: 1;
+            }
+    
+            .timelineCont h2::before {
+                content: "";
+                position: absolute;
+                left: 10%;
+                right: 0;
+                bottom: 10px;
+                z-index: -1;
+                width: 100%;
+                height: 20px;
+                background-color: #84ffc9;
+                background: var(--accent-primary);
+            }
+    
+            .timelineCont {
+                position: relative;
+                margin-right: 2em;
+                margin-left: 2em;
+                height: fit-content;
+            }
+    
+    
+            .timelineCont::after {
+                content: "";
+                position: absolute;
+                left: -2em;
+                right: 0;
+                top: -3em;
+                bottom: 3em;
+                border-radius: 2px;
+                width: 12px;
+                background: var(--accent-primary);
+            }
+    
+    
+    
+            .timelineCont .timelineContent {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 4em;
+                color: #FFF;
+            }
+    
+            .timelineCont .timelineContent span {
+                position: relative;
+                padding: 0.5em 1em;
+                margin-left: 0em;
+                z-index: 3;
+                /* background: #84ffc9;
+                border-radius: 50px;
+                border: 3px solid #0a0a0a; */
+    
+                /* background: #84ffc9; */
+                border-radius: 2px;
+                border: 1px solid #fff;
+                font-weight: bold;
+            }
+    
+            .timelineCont .timelineContent span::before {
+                content: "";
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                border: 3px solid var(--accent-primary);
+                background: #000;
+                left: calc(-2em - 6px);
+                z-index: 2;
+                border-radius: 20px;
+            }
+    
+            .timelineCont .timelineContent article {
+                margin-top: 1.5em;
+                /* background-color: #ffffffa9; */
+                margin-bottom: 2em;
+                position: relative;
+                padding: 0.5em 0.7em;
+                transform-style: preserve-3d;
+            }
+    
+            @media screen and (min-width: 922px) {
+    
+                .timelineCont::after {
+                    left: 50%;
+                    left: calc(50% - 7px);
+                }
+    
+    
+                .timelineCont .timelineContent {
+                    max-width: 45%;
+                    position: unset;
+                }
+    
+                .timelineCont .timelineContent.left {
+                    align-items: flex-end;
+                }
+    
+                .timelineCont .timelineContent.right {
+                    margin-right: -2em;
+                    margin-left: auto;
+                    position: unset;
+                }
+    
+                .timelineCont .timelineContent.right span {
+                    position: unset;
+                }
+    
+                .timelineCont .timelineContent.right span::before {
+                    left: calc(50% - 10px);
+                }
+    
+                .timelineCont .timelineContent span {
+                    position: unset;
+                    margin-top: -1.5em;
+                }
+    
+                .timelineCont .timelineContent span::before {
+                    left: calc(50% - 3px);
+                    left: calc(50% - 10px);
+                }
+    
+            }
+    
+            @media screen and (min-width: 768px) {
+                .timelineCont {
+                    margin-left: 6em;
+                    margin-right: 6em;
+                }
+    
+    
+                .timelineCont .timelineContent article {
+                    padding: 1em 2em;
+                }
+    
+    
+            }
+    
+            @media screen and (min-width: 768px) and (min-width: 922px) {
+                .timelineCont {
+                    max-width: calc((80vw / 4) * 4);
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+    
+                .timelineCont .timelineContent article {
+                    position: absolute;
+                }
+    
+                section.faq .faqAccordion {
+                    max-width: calc((65vw / 4) * 4);
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+    
+    
+            }
+        </style>
+
+    </section>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://unpkg.com/aos@2.3.0/dist/aos.js'></script>
+    <script>
+        let duration = 1.4,
+            delay = 0.5,
+            delay2 = 2,
+            delay3 = 2,
+            mDuration = 1;
+
+        function formatDate(date) {
+            return new Date(date.replace(/-/g, "/"))
+        }
+
+        // new WOW().init();
+        // wow = new WOW({
+        //     boxClass: 'wow', // default
+        //     animateClass: 'animated', // default
+        //     offset: 0, // default
+        //     mobile: true, // default
+        //     live: true // default
+        // })
+
+        $(document).ready(function () {
+
+            $(".timelineContent").each(function () {
+                let ar = $(this).find("article");
+                let height = ar[0].clientHeight;
+                $(this).css("minHeight", height - height / 3 + "px");
+
+                if ($(this).index() % 2 == 1)
+                    $(this).find("article").attr("data-aos", "fade-left");
+                else
+                    $(this).find("article").attr("data-aos", "fade-right");
+
+                if (window.innerWidth < 768)
+                    $(this).find("article").attr("data-aos", "fade-left");
+
+            });
+
+            AOS.init({
+                duration: 1200
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
