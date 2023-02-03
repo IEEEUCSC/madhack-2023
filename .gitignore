@@ -1,0 +1,9 @@
+.git
+.vscode
+*.mp4
+*.pdf
+*.rar
+*.sql
+*.zip
+
+/secret
