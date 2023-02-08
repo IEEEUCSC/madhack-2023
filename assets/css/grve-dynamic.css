@@ -2064,7 +2064,8 @@ h6, .grve-h6, .vc_tta.vc_general .vc_tta-panel-title, #grve-main-content .vc_tta
 }
 
 #grve-main-header.grve-skin-sticky .grve-logo-text a:hover, #grve-main-header.grve-skin-sticky .grve-horizontal-menu:not(.grve-menu-element)>.grve-menu>li:hover>.grve-link-wrapper a, #grve-main-header.grve-skin-sticky .grve-horizontal-menu:not(.grve-menu-element)>.grve-menu>li.current-menu-item>.grve-link-wrapper a, #grve-main-header.grve-skin-sticky .grve-horizontal-menu:not(.grve-menu-element)>.grve-menu>li.current-menu-ancestor>.grve-link-wrapper a, #grve-main-header.grve-skin-sticky .grve-header-elements .grve-header-element>a:not(.grve-btn):hover, #grve-main-header.grve-skin-sticky .grve-header-elements .grve-socials-elements a:hover, #grve-main-header.grve-skin-sticky .grve-hidden-menu-icon:hover {
-    color: #383838;
+    /* color: #383838; */
+    color: #54c5f7;
 }
 
 #grve-main-header.grve-skin-sticky .grve-burger-icon span {
@@ -2579,6 +2580,7 @@ h6, .grve-h6, .vc_tta.vc_general .vc_tta-panel-title, #grve-main-content .vc_tta
 
 .grve-link-hover-primary-1 a:hover, .grve-inner-section.grve-link-hover-primary-1 a:hover, .grve-column.grve-link-hover-primary-1 a:hover, .grve-inner-section .grve-column-inner.grve-link-hover-primary-1 a:hover, .grve-link-hover-primary-1 .grve-menu-element .grve-arrow:hover, .grve-link-hover-primary-1 .widget:not(.grve-social) a:not(.grve-outline):not(.grve-btn):hover, .grve-inner-section.grve-link-hover-primary-1 .widget:not(.grve-social) a:not(.grve-outline):not(.grve-btn):hover, .grve-column.grve-link-hover-primary-1 .widget:not(.grve-social) a:not(.grve-outline):not(.grve-btn):hover, .grve-inner-section .grve-column-inner.grve-link-hover-primary-1 .widget:not(.grve-social) a:not(.grve-outline):not(.grve-btn):hover {
     color: #090429;
+    color: #54c5f7;
 }
 
 .grve-link-primary-1 a svg path {
