@@ -84,6 +84,8 @@
 
 <body>
 
+    <section style="height: 100vh;" class="trigger"></section>
+
     <section class="t-shirt">
 
         <div class="shirt-wrapper">
@@ -153,7 +155,7 @@
                 font-weight: 700;
                 color: #fff;
                 text-align: center;
-            }            
+            }
         </style>
 
         <style>
@@ -193,15 +195,15 @@
 
             @keyframes hue {
                 0% {
-                    filter: hue-rotate(0deg) ;
+                    filter: hue-rotate(0deg);
                 }
 
                 50% {
-                    filter: hue-rotate(360deg) ;
+                    filter: hue-rotate(360deg);
                 }
 
                 100% {
-                    filter: hue-rotate(0deg) ;
+                    filter: hue-rotate(0deg);
                 }
             }
 
@@ -252,8 +254,9 @@
                 text-transform: uppercase;
                 letter-spacing: 0.1rem;
                 /* animation: ticker 10s linear infinite; */
+                transition: all 0.1s ease-out;
 
-                animation: ticker 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+                /* animation: ticker 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite; */
                 white-space: nowrap;
                 font-size: 35vw;
                 font-size: 35vmax;
@@ -366,9 +369,45 @@
 
     </section>
 
+    <section style="height: 100vh;" class="end"></section>
 
     <!-- <section style="height: 100vh;"></section> -->
 
+    <script src="./assets/js/comm"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+        integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
+
+    <script>
+
+        function isMobile() {
+            if (window.innerHeight > window.innerWidth)
+                return true;
+            return false;
+        }
+        let x_val = 100;
+        if (isMobile())
+            x_val = 300;
+
+        var controller_text = new ScrollMagic.Controller();
+
+        var scene_text = new ScrollMagic.Scene({
+            triggerElement: ".t-shirt",
+            // offset: -1000,
+            triggerHook: 'onEnter',
+            duration: "200%"
+        })
+            .setTween(".ticker-text", {
+                x: `${x_val}%`,
+                ease: Linear.easeNone
+            })
+            .addTo(controller_text);
+
+
+    </script>
 
 
 </body>

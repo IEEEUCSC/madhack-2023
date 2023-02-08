@@ -1330,7 +1330,7 @@
 
 										<div class="grve-background-wrapper">
 											<div class="grve-bg-image grve-bg-center-center grve-bg-image-id-1226"
-												style="background-image: url(./assets/img/common/footer-bg.jpg);">
+												style="background-image: url(./assets/img/common/footer-bg-alt.jpg);">
 											</div>
 										</div>
 									</div>
@@ -1670,7 +1670,7 @@
 										</div>
 										<div class="grve-background-wrapper">
 											<div class="grve-bg-image grve-bg-center-center grve-bg-image-id-1501"
-												style="background-image: url(./assets/img/common/footer-bg.jpg);">
+												style="background-image: url(./assets/img/common/footer-bg-alt.jpg);">
 											</div>
 										</div>
 
@@ -1790,8 +1790,9 @@
 														text-transform: uppercase;
 														letter-spacing: 0.1rem;
 														/* animation: ticker 10s linear infinite; */
+														transition: all 0.1s ease-out;
 
-														animation: ticker 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+														/* animation: ticker 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite; */
 														white-space: nowrap;
 														font-size: 35vw;
 														font-size: 35vmax;
@@ -1959,7 +1960,7 @@
 										</div>
 										<!-- <div class="grve-background-wrapper">
 											<div class="grve-bg-image grve-bg-center-center grve-bg-image-id-1501"
-												style="background-image: url(./assets/img/common/footer-bg.jpg);">
+												style="background-image: url(./assets/img/common/footer-bg-alt.jpg);">
 											</div>
 										</div> -->
 
@@ -2687,7 +2688,7 @@
 											</div>
 										</div>
 										<div class="grve-background-wrapper">
-											<div class="grve-bg-image grve-bg-center-center grve-bg-image-id-1226" style="background-image: url(./assets/img/common/footer-bg.jpg);">
+											<div class="grve-bg-image grve-bg-center-center grve-bg-image-id-1226" style="background-image: url(./assets/img/common/footer-bg-alt.jpg);">
 											</div>
 										</div>
 									</div> -->
@@ -3749,6 +3750,23 @@
 				setPin(".hero-alt").
 				addTo(controller);
 		}
+
+		let x_val = 100;
+		if(isMobile())
+			x_val = 300;
+		
+		var controller_text = new ScrollMagic.Controller();
+
+        var scene_text = new ScrollMagic.Scene({
+            triggerElement: ".t-shirt",
+            triggerHook: 'onEnter',
+            duration: "200%"
+        })
+            .setTween(".ticker-text", {
+                x: `${x_val}%`,
+                ease: Linear.easeNone
+            })
+            .addTo(controller_text);
 
 
 
