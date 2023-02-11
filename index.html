@@ -1915,7 +1915,9 @@
 														</span>
 													</h3>
 													<div class="coming-soon-btn">
-														<a href="javascript:void(0);" class="btn-3d"
+														<!-- scroll 100px below -->
+														<a href="javascript:void(0);" 
+														class="btn-3d order-tee-btn"
 															style="color: #fff;">
 															Place Order
 														</a>
@@ -1958,7 +1960,7 @@
 												}
 											</style>
 
-											<div class="grve-row grve-bookmark grve-mobile-vertical-gap-30">
+											<div class="grve-row grve-bookmark grve-mobile-vertical-gap-30 t-shirt-form-section">
 												<div
 													class="grve-column wpb_column grve-bookmark grve-column-1-6  grve-with-bg-transparent grve-empty-column">
 													<div class="grve-column-wrapper">
@@ -4471,6 +4473,7 @@
 					$('form.registrationForm input[name="university_name"]').closest('.grve-one-half').slideDown();
 				else
 					$('form.registrationForm input[name="university_name"]').closest('.grve-one-half').slideUp();
+					// $('.t-shirt-form-section').slideToggle(1000);
 			});
 
 			// on change payment_method
@@ -4480,6 +4483,14 @@
 					$('form.registrationForm .receipt_accordion').slideDown();
 				else
 					$('form.registrationForm .receipt_accordion').slideUp();
+			});
+
+			// $('.t-shirt-form-section').slideUp();
+			$(document).on('click', '.order-tee-btn', function () {
+				// $('.t-shirt-form-section').slideDown(1000);
+				$('html, body').animate({
+					scrollTop: $(".t-shirt-form-section").offset().top
+				}, 1000);
 			});
 
 			// <div class="wrapper-radio">
