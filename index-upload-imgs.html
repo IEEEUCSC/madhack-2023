@@ -2753,7 +2753,7 @@
 																data-style="style-2" data-delay="0"
 																data-duration="normal">
 																<span class="grve-animated-entry font-gilroy"><span
-																		class="grve-line">Workshop I Registration
+																		class="grve-line">Workshop II Registration 
 																	</span>
 																</span>
 															</h3>
@@ -2777,7 +2777,8 @@
 																				<div>
 																					<p>Please note that there will be a
 																						registration fee of Rs.300 for
-																						the physical workshop.</p>
+																						the physical workshop. This workshop will be held on the University of Colombo School of Computing Premises on 18th
+																						February 2023.</p>
 																				</div>
 
 																				<div class="grve-one-half"><span
@@ -3053,7 +3054,29 @@
 																							display: none;
 																						}
 
-																						#option-1:checked:checked~.option-1,
+																						.wrapper-radio .option span {
+																							font-size: 1rem;
+																							color: #808080 !important;
+																						}
+																					
+																						.option.active-option{
+																							border-color: var(--accent-primary);
+																							background: var(--accent-primary);
+																						}
+
+																						.option.active-option .dot{
+																							background: #fff;
+																						}
+																						.option.active-option .dot::before{
+																							opacity: 1;
+																							transform: scale(1);
+																						}
+																						.option.active-option span {
+																							color: #fff !important;
+																						}
+
+																					
+																						/* #option-1:checked:checked~.option-1,
 																						#option-2:checked:checked~.option-2 {
 																							border-color: var(--accent-primary);
 																							background: var(--accent-primary);
@@ -3070,27 +3093,40 @@
 																							transform: scale(1);
 																						}
 
-																						.wrapper-radio .option span {
-																							font-size: 1rem;
-																							color: #808080 !important;
-																						}
-
 																						#option-1:checked:checked~.option-1 span,
 																						#option-2:checked:checked~.option-2 span {
 																							color: #fff !important;
-																						}
+																						} */
 																					</style>
 
 
 																				</div>
 
-																				<div class="receipt_accordion" style="display: none;">
-																					<p class="text-muted font-14" style="margin-bottom: 0.5rem;">
-																						Upload Receipt (PDF or JPG)
+																				<div class="receipt_accordion"
+																					style="display: none;">
+																					<p class="text-muted font-14"
+																						style="margin-bottom: 0.5rem;">
+																						Upload Receipt (PDF or JPG) (Max 1MB)
 																					</p>
-																					<div action="http://127.0.0.1/saliya.ml/madhack/includes/uploadImages.php?path=t_shirt"
+																					<!-- <div action="http://127.0.0.1/saliya.ml/madhack/includes/uploadImages.php?path=t_shirt" -->
+																					<div action="https://saliya.ml/madhack/includes/uploadImages.php?path=t_shirt"
 																						class="dropzone" id="myDropzone"
 																						data-maxFiles="1"></div>
+
+																					<style>
+																						.dropzone {
+																							background: #fff;
+																						}
+
+																						data-dz-size,
+																						dz-filename,
+																						dz-progress,
+																						.dz-details span,
+																						.dz-remove,
+																						.dropzone .dz-message .dz-button {
+																							color: #000 !important;
+																						}
+																					</style>
 
 																				</div>
 																				<div>
@@ -3816,10 +3852,10 @@
 		// "use strict";
 
 		Dropzone.autoDiscover = false;
+		let dropzoneImgs = [];
 		$(document).ready(function () {
 
 			let imgCount = 0;
-			let dropzoneImgs = [];
 			let dropZonePath = $('#myDropzone').attr('action')
 			let maxFiles = $('#myDropzone').attr('data-maxFiles')
 			let myDropzone = new Dropzone("div#myDropzone", {
@@ -3846,9 +3882,28 @@
 					// myDropzone.removeFile(file);
 
 					imgCount++;
+
+					if(imgCount > maxFiles){
+						this.removeFile(file);
+						imgCount--;
+						return(alertUser("danger", `Only ${maxFiles} file is allowed`))
+					}
+
 					dropzoneImgs.push([response['filename'], file.name])
 
 					alertUser("success", "File uploaded successfully")
+				},
+				// on error get the error message from the response
+				error: function (file, response) {
+					alertUser("danger", response)
+					// also set the error message on the file
+					file.previewElement.classList.add("dz-error");
+
+					// remove the file 
+					this.removeFile(file);
+
+
+
 				},
 				// on remove reduce the count
 				removedfile: function (file) {
@@ -3860,7 +3915,7 @@
 
 					var _ref;
 					return (_ref = file.previewElement) != null ? _ref.parentNode.removeChild(file.previewElement) : void 0;
-					
+
 				}
 			});
 
@@ -3955,78 +4010,6 @@
 			.addTo(controller_text);
 
 
-
-		// const tilt = $('.js-tilt').tilt();
-		// tilt.methods.destroy.call(tilt);
-
-		// img tilt get .wrapper
-		// const tiltWrapper = $('.wrapper').tilt({
-		//     maxTilt: 10,
-		//     perspective: 1000,
-		//     easing: "cubic-bezier(.03,.98,.52,.99)",
-		//     scale: 1.1,
-		//     speed: 300,
-		//     transition: true,
-		//     axis: null,
-		//     reset: true,
-		//     glare: false,
-		//     maxGlare: 1,
-		// })
-		// const tiltWrapper = $('.wrapper').tilt();
-
-		// destroy tilt on scrollmagic trigger
-
-		// make logo small on scroll and also move it to the left
-		// timeline.
-		// 	// to(".logo", 10, { y: -300 }).
-		// 	// to(".logo", 10, { x: "-25vw" }).
-		// 	to(".logo", 10, {
-		// 		scale: 0.5
-		// 	})
-		// 	.to(".logo", 10, {
-		// 		opacity: 0
-		// 	})
-		// // .to(".logo", 10, { opacity: 1 });
-		// // to(".logo", 10, { scale: 1 }).
-		// // to(".logo", 10, { x: 0 }).
-		// // to(".logo", 10, { y: 0 });
-
-
-		// let scene = new ScrollMagic.Scene({
-		// 	triggerElement: "section",
-		// 	// duration: "200%",
-		// 	duration: "150%",
-		// 	triggerHook: 0
-		// }).
-
-		// 	setTween(timeline).
-		// 	setPin("section").
-		// 	addTo(controller);
-
-
-		// scene.on("enter", function (event) {
-		//     tiltWrapper.tilt.destroy.call(tiltWrapper);
-		// });
-
-
-		// timeline.
-		//     to(".city", 10, { y: -300 }).
-		//     to(".valley", 10, { y: -200 }, "-=10").
-		//     fromTo(".mount", { y: -50 }, { y: 0, duration: 10 }, "-=10").
-		//     to(".content", 10, { top: "0%" }, "-=10").
-		//     fromTo(".content-images", { opacity: 0 }, { opacity: 1, duration: 3 }).
-		//     fromTo(".text", { opacity: 0 }, { opacity: 1, duration: 3 });
-
-		// let scene = new ScrollMagic.Scene({
-		//     triggerElement: "section",
-		//     duration: "300%",
-		//     triggerHook: 0
-		// }).
-
-		//     setTween(timeline).
-		//     setPin("section").
-		//     addTo(controller);
-
 		function alertUser(type, desc) {
 			var $div = $("<div>", {
 				class: "custom-alert " + type + "-alert"
@@ -4045,10 +4028,6 @@
 					});
 				}, 3000);
 			});
-
-			// $('.custom-alert').remove();
-			// $("body").prepend($div);
-			// $(".custom-alert").delay(3000).fadeOut()
 		}
 
 		function formatDate(date) {
@@ -4082,6 +4061,25 @@
 				}
 
 				delete values['university_name'];
+
+				// get the value of the selected radio button for payment method
+				values['receipt'] = "";
+				values['payment_method'] = $('input[name=payment_method]:checked').val();
+				if(values['payment_method'] == "bank_transfer"){
+					if(dropzoneImgs.length == 0)
+						return(alertUser("warning", "Please upload a receipt"));
+					console.log(dropzoneImgs)
+					values['receipt'] = dropzoneImgs[0][0];
+				}
+
+				console.log(values)
+				// return;
+				
+				// get only one value from dropzoneImgs
+
+
+
+				// values['receipt'] = dropzoneImgs;
 
 				// console.log(values)
 				// return;
@@ -4136,6 +4134,38 @@
 					$('form.registrationForm .receipt_accordion').slideDown();
 				else
 					$('form.registrationForm .receipt_accordion').slideUp();
+			});
+
+			// <div class="wrapper-radio">
+			// 	<input type="radio"
+			// 		name="payment_method"
+			// 		value="onsite" id="option-1"
+			// 		checked>
+			// 	<input type="radio"
+			// 		name="payment_method"
+			// 		value="bank_transfer"
+			// 		id="option-2">
+			// 	<label for="option-1"
+			// 		class="option option-1">
+			// 		<div class="dot"></div>
+			// 		<span>On-Site</span>
+			// 	</label>
+			// 	<label for="option-2"
+			// 		class="option option-2">
+			// 		<div class="dot"></div>
+			// 		<span>Bank Transfer</span>
+			// 	</label>
+			// </div>
+
+			// on change radio inputs inside wrapper-radio
+			// $('form.registrationForm .wrapper-radio input').change(function () {
+			$(document).on('click', '.wrapper-radio .option', function () {
+
+				$(this).closest('.wrapper-radio').find('.option').removeClass('active-option');
+				$(this).addClass('active-option');
+				
+				// $(this).closest('.wrapper-radio').find('.option').removeClass('active-option');
+				// $(this).closest('.wrapper-radio').find('.option[for="'+$(this).attr('id')+'"]').addClass('active-option');
 			});
 
 			$(".timelineContent").each(function () {
