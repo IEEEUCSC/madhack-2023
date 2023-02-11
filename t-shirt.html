@@ -43,6 +43,9 @@
     <link rel="stylesheet" href="./assets/css/common.css">
     <link rel="stylesheet" href="./assets/css/main.min.css">
 
+    <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+
+
     <!-- <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="./assets/libs/flickity/dist/flickity.min.css">
@@ -119,6 +122,15 @@
                 <div class="coming-soon-btn">
                     <a href="https://www.madhack.in/" target="_blank" rel="noopener noreferrer">Order Now</a>
                 </div>
+
+                <div class="mb-3">
+                    <label for="simpleinput" class="form-label">Service Category Image</label>
+                    <p class="text-muted font-14">
+                        Upload category image (Maximum 1 image)
+                    </p>
+                    <div action="http://127.0.0.1/saliya.ml/madhack/includes/uploadImages.php?path=t_shirt" class="dropzone" id="myDropzone" data-maxFiles="1"></div>
+                </div>
+
             </div>
 
         </div>
@@ -369,7 +381,8 @@
 
     </section>
 
-    <section style="height: 100vh;" class="end"></section>
+    <section style="height: 100vh;" class="end">
+    </section>
 
     <!-- <section style="height: 100vh;"></section> -->
 
@@ -381,7 +394,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
 
+    <script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
+
     <script>
+        // "use strict";
+
+        Dropzone.autoDiscover = false;
+        $(document).ready(function() {
+
+            let imgCount = 0;
+            let dropzoneImgs = [];
+            let dropZonePath = $('#myDropzone').attr('action')
+            let maxFiles = $('#myDropzone').attr('data-maxFiles')
+            let myDropzone = new Dropzone("div#myDropzone", {
+                url: dropZonePath,
+                parallelUploads: 1,
+                thumbnailHeight: 120,
+                thumbnailWidth: 120,
+                maxFilesize: 3,
+                // maxFiles: 3,
+                filesizeBase: 1000,
+                addRemoveLinks: true,
+                init: function() {
+                    this.on('addedfile', function(file) {
+                        // 
+                    });
+                },
+                success: function(file, response) {
+                    myDropzone.removeFile(file);
+
+                    imgCount++;
+                    dropzoneImgs.push([response['filename'], file.name])
+                }
+            });
+
+        });
+        
 
         function isMobile() {
             if (window.innerHeight > window.innerWidth)
@@ -408,6 +456,8 @@
 
 
     </script>
+
+    
 
 
 </body>
