@@ -4423,8 +4423,8 @@
             });
         }
         
+		let count = 0;
         async function getDetails() {
-            let count = 0;
             while (count < 5 && details == null) {
                 try {
                     // details = await makeGetRequest('http://127.0.0.1/saliya.ml/madhack/api/get_details');
@@ -4477,6 +4477,11 @@
                     // console.log(error);
 					alertUser("danger", "Something went wrong. Please try again later");
                     count++;
+
+					if(count == 5)
+						setTimeout(function(){
+							alertUser("danger", "Some functionalities are currently unavailable. Please try again later");
+						}, 8000);
                 }
             }
         }
@@ -4488,8 +4493,13 @@
 			$('form.registrationForm').submit(function (event) {
 				event.preventDefault();
 
-				if (details == null)
+				if (details == null){
+					if(count == 5){
+						count = 3;
+						return(getDetails());
+					}
 					return (alertUser("warning", "Please wait for the details to load"));
+				}
 
 				if (details['status'] == 200) {
 					if(details['remaining_reg'] <= 0)
@@ -4559,6 +4569,16 @@
 					success: function (response) {
 						if (response['status'] == 200) {
 							alertUser("success", response['desc']);
+
+							if(response['desc'] == "Registration successful"){
+								// $("#reg_count").text(response['remaining_reg']);
+
+								// reduce the remaining registration count
+								let remaining_reg = parseInt($("#reg_count").text());
+								remaining_reg--;
+								$("#reg_count").text(remaining_reg);
+
+							}
 							// setTimeout(function () {
 							// 	$('.registrationDiv .closeBtn').click();
 							// 	// history.go(-1);
@@ -4579,8 +4599,13 @@
 			$('form.tshirtForm').submit(function (event) {
 				event.preventDefault();
 
-				if (details == null)
+				if (details == null){
+					if(count == 5){
+						count = 3;
+						return(getDetails());
+					}
 					return (alertUser("warning", "Please wait for the details to load"));
+				}
 
 				var input = $(this);
 				var $inputs = $('form.tshirtForm :input');
