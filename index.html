@@ -2650,12 +2650,28 @@
 																					class="grve-element grve-align-inherit grve-animated-item">
 
 																					<!-- <a href="javascript:void(0);" class="btn-3d" style="color: #fff;"> -->
-																					<a href="https://drive.google.com/file/d/12KfFOa3LCudPtvT_EMyIsrmeVYprzqOD/view?usp=sharing"
+																					<a href="https://drive.google.com/file/d/1yxHb_dkRk0Z7eEIx68y0Hto-Y_6LG8v_/view?usp=share_link"
 																						target="_blank"
 																						rel="noopener noreferrer"
 																						class="btn-3d"
 																						style="color: #fff;">
 																						Download Booklet
+																					</a>
+
+																				</div>
+																				<div data-animation="fade-in-up"
+																					data-delay="500"
+																					data-duration="normal"
+																					class="grve-element grve-align-inherit grve-animated-item"
+																					style="margin-top: 1.5rem;">
+
+																					<!-- <a href="javascript:void(0);" class="btn-3d" style="color: #fff;"> -->
+																					<a href="https://youtu.be/3KFAZClGo2w"
+																						target="_blank"
+																						rel="noopener noreferrer"
+																						class="btn-3d"
+																						style="color: #fff; padding: 2.5rem 2rem;">
+																						Workshop 1 Recording
 																					</a>
 
 																				</div>
@@ -3252,7 +3268,8 @@
 																					bank transfer -->
 
 																					<p style="margin-bottom: 0.5rem;">
-																						Please select payment method</p>
+																						Please select payment method (Select "Bank Transfer" to view bank details)
+																					</p>
 
 																					<div class="wrapper-radio">
 																						<input type="radio"
@@ -4459,7 +4476,7 @@
 									$radio.attr("disabled", true);
 									$label.addClass("disabled");
 									$label.find("span").text(size + " (Out of stock)");
-								}else if(count < 5)
+								}else if(count <= 10)
 									$label.find("span").text(size + " (Only " + count + " left)");
 							}
 
