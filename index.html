@@ -4450,8 +4450,8 @@
 
 						let response = details;
 						if (response['status'] == 200) {
-							$("#reg_count").text(response['remaining_reg']);
-							if(response['remaining_reg'] <= 0){
+							$("#reg_count").text(response['remaining_reg'] - 20);
+							if(response['remaining_reg'] <= 20){
 								$("#reg_notice").text("Registration limit has been exceeded. Registrations are closed.");
 								$("#reg_notice").css("color", "#f53d3d");
 							}
@@ -4517,7 +4517,7 @@
 				}
 
 				if (details['status'] == 200) {
-					if(details['remaining_reg'] <= 0)
+					if(details['remaining_reg'] <= 20)
 						return(alertUser("danger", "Registration limit has been exceeded. Registrations are closed."));
 				} else
 					return(alertUser("danger", details['desc']));
