@@ -51,6 +51,10 @@
         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Condensed&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>MadHack Initial Round Tasks</title>
 
     <link rel="icon" href="./assets/img/favicon.png" sizes="32x32" />
@@ -113,6 +117,93 @@
 
 <body>
 
+    <style>
+        /* .row {
+            text-align: left;
+            max-width: max(65%, 500px);
+        } */
+
+        .task-lists {
+            max-width: max(40vw, 768px);
+            max-width: max(40vw, 1000px);
+            max-width: max(40vw, 900px);
+            /* max-width: 50vw; */
+            font-size: 0.8rem;
+
+        }
+
+        ul.styled {
+            list-style: none;
+            padding: 0px;
+            /* margin-bottom: 50px; */
+        }
+
+        ul.styled li {
+            padding-left: 25px;
+            position: relative;
+            /* margin-bottom: 15px; */
+        }
+
+        ul.styled li:before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #54c5f7;
+            border-radius: 50%;
+            top: 8px;
+            left: 6px;
+        }
+
+        /* second level list */
+        ul.styled li ul {
+            list-style: none;
+            padding: 0px;
+            margin-bottom: 15px;
+        }
+
+        ul.styled li ul li {
+            padding-left: 25px;
+            position: relative;
+            /* margin-bottom: 15px; */
+        }
+
+        ul.styled li ul li:before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 2px solid #54c5f7;
+            background: transparent;
+            border-radius: 50%;
+            top: 8px;
+            left: 8px;
+        }
+
+        a {
+            color: #54c5f7;
+            text-decoration: none;
+        }
+
+        .snippet {
+            /* background: #1e1e1e; */
+            /* faded white */
+            background: #616161;
+            padding: 2px 4px;
+            border-radius: 5px;
+            color: #54c5f7;
+        }
+
+        a.snippet:hover {
+            color: #090429;
+            text-decoration: underline;
+        }
+
+        /* ul li {
+            list-style-type: "\1F44D";
+        } */
+    </style>
+
     <div class="container mt-5 title-section">
         <div class="row">
             <div class="col-12">
@@ -121,27 +212,58 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row mx-md-5 mx-2">
             <div class="col-12">
                 <div class="d-flex justify-content-center">
                     <h1 class="text-center font-gilroy">MadHack Agon Tasks</h1>
                 </div>
-                <div class="d-flex justify-content-center">
+                <div class=" justify-content-center">
                     <!-- description -->
-                    <p class="text-center px-5">
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                        architecto
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                        architecto
+                    <p class="text-center px-md-5 px-2">
+                        As a busy individual, I struggle to keep track of all my tasks and responsibilities. I often
+                        forget about important todos and miss deadlines, causing stress and loss of productivity. I need
+                        a solution that can help me manage my daily tasks effectively and efficiently.So I thought of an
+                        Android Native application called Taskopolis, whose screens you can find below
                     </p>
+                    <p class="text-center px-5">
+                        A few things before you start
+                    </p>
+
+                    <!-- A few things before you start:
+                    The UIs in the application should strictly be the same as the corresponding images.
+                    The API documentation can be found here: https://agon.madhack.ucscieee.com/. You can find the
+                    request and response format along with the examples.
+                    To communicate with the API endpoint, your request should include the X-API-Key header with the
+                    value set to your team token.
+                    Do test the API with your team token with the default route to make sure it is working. -->
+
+
+
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6">
+                            <ul class="styled">
+                                <li> The UIs in the application should strictly be the same as the corresponding images.
+                                </li>
+                                <li> The API documentation can be found here:
+                                    <a href="https://agon.madhack.ucscieee.com/"
+                                        target="_blank">https://agon.madhack.ucscieee.com/</a> You can find the
+                                    request and response format along with the examples.
+                                </li>
+                                <li>To communicate with the API endpoint, your request should include the <span
+                                        class="snippet">X-API-Key</span>
+                                    header with the
+                                    value set to your team token.</li>
+                                <li>Do test the API with your team token with the default route to make sure it is
+                                    working.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container my-5 ">
+    <div class="container my-5 d-none">
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="row mx-3 mx-md-5">
@@ -153,11 +275,37 @@
                     <div class="col-12 col-md-7">
                         <div>
                             <h2 class="font-gilroy pb-2">1. Splashscreen</h2>
-                            <p class="">
+
+                            <ul class="list-unstyled">
+                                <li class="py-1">
+                                    <span class="pl-2">
+                                        Name of the application
+                                    </span>
+                                </li>
+                                <li class="py-1">
+                                    <span class="pl-2">
+                                        Tagline
+                                    </span>
+                                </li>
+                                <li class="py-1">
+                                    <span class="pl-2">
+                                        Button that opens the Sign Up screen
+                                    </span>
+                                </li>
+                                <li class="py-1">
+                                    <span class="pl-2">
+                                        Button that opens the Sign In screen
+                                    </span>
+                                </li>
+
+
+                            </ul>
+
+                            <!-- <p class="">
                                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
                                 laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
                                 architecto
-                            </p>
+                            </p> -->
                         </div>
                     </div>
                 </div>
@@ -182,9 +330,199 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container my-5 task-lists">
+        <div class="row">
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12 col-md-5 pb-4">
+                        <a href="./assets/img/tasks-initial-round/sign up page.jpg" data-fancybox="group">
+                            <img src="./assets/img/tasks-initial-round/sign up page.jpg" alt="logo" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div>
+                            <h2 class="font-gilroy pb-2">1. Welcome Screen</h2>
+
+                            <ul class="styled">
+                                <li>Task 1.1:
+                                    <ul>
+                                        <li>Name the XML as <span class="snippet">activity_welcome.xml</span> or
+                                            anything similar</li>
+                                        <li>The screen should consist of all the fields as shown in the image (x).</li>
+                                    </ul>
+                                </li>
+                                <li>Task 1.2:
+                                    <ul>
+                                        <li>The Sign Up button should navigate to the Sign Up Screen.</li>
+                                        <li>The Sign In button should navigate to the Sign In Screen.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12 col-md-5 pb-4">
+                        <a href="./assets/img/tasks-initial-round/sign up page alt.jpg" data-fancybox="group">
+                            <img src="./assets/img/tasks-initial-round/sign up page alt.jpg" alt="logo"
+                                class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div>
+                            <h2 class="font-gilroy pb-2">2. Sign Up Screen</h2>
+
+                            <!-- Task 2.1:
+                            Name the XML view as activity_signup.xml or something similar
+                            The screen should consist of all the fields as shown in the image().
+                            Task 2.2:
+                            Perform frontend validations for all the form fields
+                            Email Address : Should be in valid format.
+                            Contact Number : Should be allowed only 10 characters.
+                            Password : Should have a minimum of 6 characters, an uppercase letter, a special character
+                            and a number
+                            Task 2.3:
+                            Sign up button should be able to create a user account using the /auth/register endpoint.
+                            Task 2.4:
+                            Once the sign up button is clicked, if the user account has been successfully created or if
+                            the account already exists, it should navigate to the Sign In screen
+                            Task 2.5:
+                            On failed requests use the backend response and create a suitable error message.
+                            Note: Only consider status codes 400,401,409 -->
+
+                            <ul class="styled">
+                                <li>Task 2.1:
+                                    <ul>
+                                        <li>Name the XML view as <span class="snippet">activity_signup.xml</span> or
+                                            something similar</li>
+                                        <li>The screen should consist of all the fields as shown in the image (x).</li>
+                                    </ul>
+                                </li>
+                                <li>Task 2.2:
+                                    <ul>
+                                        <li>Perform frontend validations for all the form fields</li>
+                                        <li>Email Address : Should be in valid format.</li>
+                                        <li>Contact Number : Should be allowed only 10 characters.</li>
+                                        <li>Password : Should have a minimum of 6 characters, an uppercase letter, a
+                                            special character and a number</li>
+                                    </ul>
+                                </li>
+                                <li>Task 2.3:
+                                    <ul>
+                                        <li>Sign up button should be able to create a user account using the
+                                            <a href="https://agon.madhack.ucscieee.com/#/auth/registerUser" target="_blank" class="snippet">/auth/register</a> endpoint.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Task 2.4:
+                                    <ul>
+                                        <li>Once the sign up button is clicked, if the user account has been
+                                            successfully
+                                            created or if the account already exists, it should navigate to the Sign In
+                                            screen</li>
+                                    </ul>
+                                </li>
+                                <li>Task 2.5:
+                                    <ul>
+                                        <li>On failed requests use the backend response and create a suitable error
+                                            message.</li>
+                                        <li>Note: <strong>Only</strong> consider status codes 400,401,409</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12 col-md-5 pb-4">
+                        <a href="./assets/img/tasks-initial-round/signin page.jpg" data-fancybox="group">
+                            <img src="./assets/img/tasks-initial-round/signin page.jpg" alt="logo" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div>
+                            <h2 class="font-gilroy pb-2">3. Sign In Screen</h2>
+
+                            <!-- Task 3.1:
+                            Name the XML view as activity_signin.xml or something similar
+                            - The screen should consist of all the fields as shown in the image().
+                            Task 3.2:
+                            - Sign in button should be able to successfully login the user using the ‘’auth/login “
+                            endpoint.
+
+                            Task 3.3:
+                            - Successful sign in should navigate to the home screen and sign up button should navigate
+                            to sign up screen.
 
 
 
+                            Task 3.4:
+                            - On failed requests use the backend response and create a suitable error message.
+                            Note: Only consider status codes 400,401
+                            Task 3.5:
+                            Save the user's login instance using local storage (eg: shared preferences) and it should
+                            only be cleared after a logout.
+
+                            Note: Save the returned token as it is required in other API requests. (The JWT will not
+                            expire automatically)
+ -->
+
+                            <ul class="styled">
+                                <li>Task 3.1:
+                                    <ul>
+                                        <li>Name the XML view as <span class="snippet">activity_signin.xml</span> or
+                                            something similar</li>
+                                        <li>The screen should consist of all the fields as shown in the image (x).</li>
+                                    </ul>
+                                </li>
+                                <li>Task 3.2:
+                                    <ul>
+                                        <li>Sign in button should be able to successfully login the user using the
+                                            <a href="https://agon.madhack.ucscieee.com/#/auth/loginUser" target="_blank" class="snippet">auth/login</a> endpoint.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Task 3.3:
+                                    <ul>
+                                        <li>Successful sign in should navigate to the home screen and sign up button
+                                            should navigate to sign up screen.</li>
+                                    </ul>
+                                </li>
+                                <li>Task 3.4:
+                                    <ul>
+                                        <li>On failed requests use the backend response and create a suitable error
+                                            message.</li>
+                                        <li>Note: <strong>Only</strong> consider status codes 400,401</li>
+                                    </ul>
+                                </li>
+                                <li>Task 3.5:
+                                    <ul>
+                                        <li>Save the user's login instance using local storage (eg: shared preferences)
+                                            and it should only be cleared after a logout.</li>
+                                        <li>Note: Save the returned token as it is required in other API requests. (The
+                                            JWT will not expire automatically)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js"></script>
