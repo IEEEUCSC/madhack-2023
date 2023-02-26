@@ -231,15 +231,39 @@
 
                     <!-- A few things before you start:
                     The UIs in the application should strictly be the same as the corresponding images.
-                    The API documentation can be found here: https://agon.madhack.ucscieee.com/. You can find the
-                    request and response format along with the examples.
+                    The API documentation also contains the request and response format along with the examples.
                     To communicate with the API endpoint, your request should include the X-API-Key header with the
                     value set to your team token.
-                    Do test the API with your team token with the default route to make sure it is working. -->
-
-
+                    Do test the API with your team token with the default route to make sure it is working.
+                    You are free to use any library for implementing complex functionality such as API requests. -->
 
                     <div class="row justify-content-center">
+                        <div class="col-12 col-md-6">
+
+                            <ul class="styled">
+                                <li> The UIs in the application should strictly be the same as the corresponding images.
+                                </li>
+                                <li> The API documentation can be found here:
+                                    <a href="https://agon.madhack.ucscieee.com/"
+                                        target="_blank">https://agon.madhack.ucscieee.com/</a>. The API documentation
+                                    also contains the request and response format along with the examples
+                                </li>
+                                <li>To communicate with the API endpoint, your request should include the <span
+                                        class="snippet">X-API-Key</span>
+                                    header with the
+                                    value set to your team token.</li>
+                                <li>Do test the API with your team token with the default route to make sure it is
+                                    working.</li>
+                                <li>
+                                    You are free to use any library for implementing complex functionality such as API
+                                    requests.
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!-- <div class="row justify-content-center">
                         <div class="col-12 col-md-6">
                             <ul class="styled">
                                 <li> The UIs in the application should strictly be the same as the corresponding images.
@@ -257,7 +281,7 @@
                                     working.</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -417,7 +441,8 @@
                                 <li>Task 2.3:
                                     <ul>
                                         <li>Sign up button should be able to create a user account using the
-                                            <a href="https://agon.madhack.ucscieee.com/#/auth/registerUser" target="_blank" class="snippet">/auth/register</a> endpoint.
+                                            <a href="https://agon.madhack.ucscieee.com/#/auth/registerUser"
+                                                target="_blank" class="snippet">/auth/register</a> endpoint.
                                         </li>
                                     </ul>
                                 </li>
@@ -489,7 +514,8 @@
                                 <li>Task 3.2:
                                     <ul>
                                         <li>Sign in button should be able to successfully login the user using the
-                                            <a href="https://agon.madhack.ucscieee.com/#/auth/loginUser" target="_blank" class="snippet">auth/login</a> endpoint.
+                                            <a href="https://agon.madhack.ucscieee.com/#/auth/loginUser" target="_blank"
+                                                class="snippet">auth/login</a> endpoint.
                                         </li>
                                     </ul>
                                 </li>
@@ -510,8 +536,62 @@
                                     <ul>
                                         <li>Save the user's login instance using local storage (eg: shared preferences)
                                             and it should only be cleared after a logout.</li>
-                                        <li>Note: Save the returned token as it is required in other API requests. (The
-                                            JWT will not expire automatically)</li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <p> Note: Save the returned token as it is required in other API requests. (The
+                                JWT will not expire automatically) </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12 col-md-5 pb-4">
+                        <a href="./assets/img/tasks-initial-round/home-all.jpg" data-fancybox="group">
+                            <img src="./assets/img/tasks-initial-round/home-all.jpg" alt="logo" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div>
+                            <h2 class="font-gilroy pb-2">4.1 Main Screen (30 marks)</h2>
+
+                            <!-- 4. Main Screen (30 marks) -->
+
+                            <!-- UI Tasks
+                            Task 4.1:
+                            Name the XML view as activity_home.xml or something similar
+                            Follow the image() to develop the xml.
+                            Appbar with a hamburger menu icon, app title and a tabbed view
+                            The tabbed view should contain the following tabs:
+                            All - both pending and completed todos
+                            Pending
+                            Completed
+                            Floating Action Button (FAB) that takes you to the Add task screen.
+                            Search field should be present. -->
+
+                            <ul class="styled">
+                                <li>Task 4.1:
+                                    <ul>
+                                        <li>Name the XML view as <span class="snippet">activity_home.xml</span> or
+                                            something similar</li>
+                                        <li>Follow the image (x) to develop the xml.</li>
+                                        <li>Appbar with a hamburger menu icon, app title and a tabbed view</li>
+                                        <li>The tabbed view should contain the following tabs:
+                                            <ul>
+                                                <li>All - both pending and completed todos</li>
+                                                <li>Pending</li>
+                                                <li>Completed</li>
+                                            </ul>
+                                        </li>
+                                        <li>Floating Action Button (FAB) that takes you to the Add task screen.</li>
+                                        <li>Search field should be present.</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -522,8 +602,259 @@
                 </div>
             </div>
 
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12 col-md-5 pb-4">
+                        <a href="./assets/img/tasks-initial-round/sidebar overlay.jpg" data-fancybox="group">
+                            <img src="./assets/img/tasks-initial-round/sidebar overlay.jpg" alt="logo"
+                                class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div>
+                            <h2 class="font-gilroy pb-2">4.2 Main Screen</h2>
+                            <ul class="styled">
+                                <li>The hamburger menu should open a navigation drawer with the user’s avatar and
+                                    links to profile, about app and logout. Refer image (x)</li>
+                                <li>User data should be retrieved from <a
+                                        href="https://agon.madhack.ucscieee.com/#/user/getUser" target="_blank"
+                                        class="snippet">/user</a> endpoint.</li>
+                                <li>The links should navigate to the edit-profile and about-app pages.</li>
+                                <li>Once the logout option is clicked user data should be cleared from local storage
+                                    and the user should be navigated to the login screen.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12 col-md-5 pb-4">
+                        <a href="./assets/img/tasks-initial-round/home-all-alt.jpg" data-fancybox="group">
+                            <img src="./assets/img/tasks-initial-round/home-all-alt.jpg" alt="logo" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div>
+                            <h2 class="font-gilroy pb-2">4.3 Main Screen</h2>
+
+                            <ul class="styled">
+                                <li>Task 4.3:
+                                    <ul>
+                                        <li>The tabs should display the todos fetched by the <a
+                                                href="https://agon.madhack.ucscieee.com/#/todo/getTodoList"
+                                                target="_blank" class="snippet">/todo</a> endpoint as shown in the
+                                            image.</li>
+                                        <li>Display the list of todos in a recycler view according to image (x)</li>
+                                        <li>Each todo card should contain the relevant category icon, title, notes, due
+                                            date/time and a checkbox. You can use system icons for categories,
+                                            <ul>
+                                                <li>Important - important icon #B22222</li>
+                                                <li>Personal - person icon #006400</li>
+                                                <li>Work - work icon #1E2B46</li>
+                                                <li>Other - more icon #B8860B</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Task 4.4:
+                                    <ul>
+                                        <li>The Pending and Completed tabs should filter and show the relevant todos
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>Task 4.5:
+                                    <ul>
+                                        <li>When a todo is tapped the user should be navigated to the edit-todo screen
+                                            (task 6 image link)</li>
+                                        <li>When the checkbox is checked, the relevant todo status should be updated.
+                                            You can use the <a
+                                                href="https://agon.madhack.ucscieee.com/#/todo/updateTodoStatus"
+                                                target="_blank" class="snippet">/todo/{todoId}/status</a> endpoint.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12 col-md-5 pb-4">
+                        <a href="./assets/img/tasks-initial-round/add task.jpg" data-fancybox="group">
+                            <img src="./assets/img/tasks-initial-round/add task.jpg" alt="logo" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <div>
+                            <h2 class="font-gilroy pb-2">5. Add Task Screen (5 marks)</h2>
+
+                            <ul class="styled">
+                                <li>Task 5.1:
+                                    <ul>
+                                        <li>Name the XML view as activity_add_task.xml or something similar</li>
+                                        <li>Follow the image() to develop the xml.</li>
+                                        <li>Create a form with the following fields:
+                                            <ul>
+                                                <li>Title*</li>
+                                                <li>Notes</li>
+                                                <li>Category* (Dropdown)</li>
+                                                <li>Toggle to enable reminders* (See below for more info)</li>
+                                                <li>Due date (Date picker)</li>
+                                                <li>Due time (Time picker)</li>
+                                            </ul>
+                                        </li>
+                                        <li>* marks the mandatory fields - implement suitable validation in the
+                                            frontend</li>
+                                        <li>Use <a href="https://agon.madhack.ucscieee.com/#/category/getCategoryList"
+                                                target="_blank" class="snippet">/category</a> endpoint to retrieve the
+                                            categories to the dropdown.</li>
+                                        <li>Create a button to save the task using the endpoint <a
+                                                href="https://agon.madhack.ucscieee.com/#/todo/createTodo"
+                                                target="_blank" class="snippet">/todo</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12">
+                        <div>
+                            <h2 class="font-gilroy pb-2">9. Language Translation Task (5 marks)</h2>
+
+                            <!-- Name the XML view as activity_about_app.xml or something similar
+                            Create a list with your team members.
+                            Add a button which translates all the names to sinhala language. -->
+
+                            <ul class="styled">
+                                <li>Task 9.1:
+                                    <ul>
+                                        <li>Name the XML view as <span class="snippet">activity_about_app.xml</span> or
+                                            something similar</li>
+                                        <li>Create a list with your team members.</li>
+                                        <li>Add a button which translates all the names to sinhala language.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <p>
+                                Hint: Use a hardcoded separate string file.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Additional Tasks : Offline Support (10 marks )
+            You will get additional marks if you implement offline support to use the application.
+            This should be syncs with the server when something is edited in the todos and a blocking UI screen should
+            be added to improve the user experience.
+
+            Note: Only consider the todos list for this task.
+
+            Hint: Saves the todos in local storage and retrieves it when the app is open without internet access. -->
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12">
+                        <div>
+                            <h2 class="font-gilroy pb-2">10. Additional Tasks : Offline Support (10 marks )</h2>
+                            <p>
+                                You will get additional marks if you implement offline support to use the application.
+                                This should be synced with the server when something is edited in the todos and a
+                                blocking UI screen should be added to improve the user experience.
+                            </p>
+                            <p> Note: Only consider the todos list for this task. </p>
+                            <p>
+                                Hint: Saves the todos in local storage and retrieves it when the app is open without
+                                internet access.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Additional Marks : Reminder Task (10 marks)
+            This is a task which gives you additional marks. You can set a reminder for each todo in your local storage
+            and create a reminder alert before 2 mins from the due time.
+
+            Since it is urgent, I did try to learn Android Native and make a simple todo application myself. I was
+            supposed to finish the application by the 26th of February 2023 at 11:59 pm. However, since it itself has
+            tasks to do, without a todo application, I would not be able to finish the application in time, which is
+            where you come in! You can find my code here:
+            (link to scaffolding)
+            If you are going to use my code, since your repository and mine have unrelated histories, you can download
+            my repository as a .zip file and extract it in your project directory. Good luck, and I hope you can manage
+            the tasks better than me! -->
+
+            <div class="col-12 mb-4">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12">
+                        <div>
+                            <h2 class="font-gilroy pb-2">11. Additional Marks : Reminder Task (10 marks)</h2>
+                            <p>
+                                This is a task which gives you additional marks. You can set a reminder for each todo in
+                                your local storage and create a reminder alert before 2 mins from the due time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
+
+    <div class="container my-5 title-section">
+        <div class="row mx-md-5 mx-2">
+            <div class="col-12">
+                <div class=" justify-content-center">
+                    <p class="text-center px-md-5 px-2">
+                        Since it is urgent, I did try to learn Android Native and make a simple todo application myself.
+                        I was supposed to finish the application by the 26th of February 2023 at 11:59 pm. However,
+                        since it itself has tasks to do, without a todo application, I would not be able to finish the
+                        application in time, which is where you come in! You can find my code here:
+                        (link to scaffolding)
+                        If you are going to use my code, since your repository and mine have unrelated histories, you
+                        can download my repository as a .zip file and extract it in your project directory. Good luck,
+                        and I hope you can manage the tasks better than me!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer copyright UCSC IEEE Web Team -->
+
+    <footer>
+
+        <!-- coptight footer -->
+        <div class="container-fluid bg-dark text-white py-4 px-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">© 2023 MadHack
+                        <br />
+                        <br />
+                        A project by
+                        IEEE Student Branch of University of Colombo School of Computing
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
