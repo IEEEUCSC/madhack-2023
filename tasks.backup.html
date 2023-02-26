@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -222,9 +223,8 @@
                     <p class="text-center px-md-5 px-2">
                         As a busy individual, I struggle to keep track of all my tasks and responsibilities. I often
                         forget about important todos and miss deadlines, causing stress and loss of productivity. I need
-                        a solution that can help me manage my daily tasks effectively and efficiently. So I thought of
-                        an
-                        Android Native application called Taskopolis, whose screens you can find below:
+                        a solution that can help me manage my daily tasks effectively and efficiently.So I thought of an
+                        Android Native application called Taskopolis, whose screens you can find below
                     </p>
                     <p class="text-center px-5">
                         A few things before you start
@@ -247,19 +247,15 @@
                                 <li> The API documentation can be found here:
                                     <a href="https://agon.madhack.ucscieee.com/"
                                         target="_blank">https://agon.madhack.ucscieee.com/</a>. The API documentation
-                                    also contains the request and response format along with the examples.
+                                    also contains the request and response format along with the examples
                                 </li>
                                 <li>To communicate with the API endpoint, your request should include the <span
                                         class="snippet">X-API-Key</span>
                                     header with the
                                     value set to your team token.</li>
                                 <li>
-                                    For request body fields that require an ID, generate a random UUIDv4 string and add
-                                    as the value.
-                                </li>
-                                <li>
                                     Do test the API with your team token with the default route to make sure it is
-                                    working (You can use the <u>Try it out</u> option).
+                                    working. (You can use the <u>Try it out</u> option)
                                 </li>
                                 <li>
                                     You are free to use any library for implementing complex functionality such as API
@@ -305,14 +301,9 @@
                     </div>
                     <div class="col-12 col-md-7">
                         <div>
-                            <h2 class="font-gilroy pb-2">1. Welcome screen</h2>
+                            <h2 class="font-gilroy pb-2">1. Splashscreen</h2>
 
                             <ul class="list-unstyled">
-                                <li class="py-1">
-                                    <span class="pl-2">
-                                        App logo
-                                    </span>
-                                </li>
                                 <li class="py-1">
                                     <span class="pl-2">
                                         Name of the application
@@ -386,7 +377,7 @@
                                 <li>Task 1.1:
                                     <ul>
                                         <li>Name the XML as <span class="snippet">activity_welcome.xml</span> or
-                                            anything similar.</li>
+                                            anything similar</li>
                                         <li>The screen should consist of all the fields as shown in the image.</li>
                                     </ul>
                                 </li>
@@ -437,15 +428,15 @@
                                 <li>Task 2.1:
                                     <ul>
                                         <li>Name the XML view as <span class="snippet">activity_signup.xml</span> or
-                                            something similar.</li>
+                                            something similar</li>
                                         <li>The screen should consist of all the fields as shown in the image.</li>
                                     </ul>
                                 </li>
                                 <li>Task 2.2:
                                     <ul>
                                         <li>Perform frontend validations for all the form fields</li>
-                                        <li>Email Address : Should be in valid format</li>
-                                        <li>Contact Number : Should be allowed only 10 characters</li>
+                                        <li>Email Address : Should be in valid format.</li>
+                                        <li>Contact Number : Should be allowed only 10 characters.</li>
                                         <li>Password : Should have a minimum of 6 characters, an uppercase letter, a
                                             special character and a number</li>
                                     </ul>
@@ -461,14 +452,14 @@
                                 <li>Task 2.4:
                                     <ul>
                                         <li>Once the sign up button is clicked, if the user account has been
-                                            successfully created or if the account already exists, it should navigate to
-                                            the Sign In
+                                            successfully
+                                            created or if the account already exists, it should navigate to the Sign In
                                             screen</li>
                                     </ul>
                                 </li>
                                 <li>Task 2.5:
                                     <ul>
-                                        <li>On failed requests use the backend response and show a suitable error
+                                        <li>On failed requests use the backend response and create a suitable error
                                             message.</li>
                                         <li>Note: <strong>Only</strong> consider status codes 400,401,409</li>
                                     </ul>
@@ -519,7 +510,7 @@
                                 <li>Task 3.1:
                                     <ul>
                                         <li>Name the XML view as <span class="snippet">activity_signin.xml</span> or
-                                            something similar.</li>
+                                            something similar</li>
                                         <li>The screen should consist of all the fields as shown in the image.</li>
                                     </ul>
                                 </li>
@@ -554,7 +545,7 @@
                             </ul>
 
                             <p> Note: Save the returned token as it is required in other API requests. (The
-                                JWT will not expire automatically). </p>
+                                JWT will not expire automatically) </p>
 
                         </div>
                     </div>
@@ -592,9 +583,9 @@
                                 <li>Task 4.1:
                                     <ul>
                                         <li>Name the XML view as <span class="snippet">activity_home.xml</span> or
-                                            something similar.</li>
+                                            something similar</li>
                                         <li>Follow the image to develop the xml.</li>
-                                        <li>Appbar with a hamburger menu icon, app title and a tabbed view.</li>
+                                        <li>Appbar with a hamburger menu icon, app title and a tabbed view</li>
                                         <li>The tabbed view should contain the following tabs:
                                             <ul>
                                                 <li>All - both pending and completed todos</li>
@@ -627,7 +618,7 @@
                             <h2 class="font-gilroy pb-2">4.2 Main Screen</h2>
                             <ul class="styled">
                                 <li>The hamburger menu should open a navigation drawer with the user’s avatar and
-                                    links to profile, about app and logout, refer image.</li>
+                                    links to profile, about app and logout. Refer image</li>
                                 <li>User data should be retrieved from <a
                                         href="https://agon.madhack.ucscieee.com/#/user/getUser" target="_blank"
                                         class="snippet">/user</a> endpoint.</li>
@@ -658,7 +649,7 @@
                                                 href="https://agon.madhack.ucscieee.com/#/todo/getTodoList"
                                                 target="_blank" class="snippet">/todo</a> endpoint as shown in the
                                             image.</li>
-                                        <li>Display the list of todos in a recycler view according to the image.</li>
+                                        <li>Display the list of todos in a recycler view according to image</li>
                                         <li>Each todo card should contain the relevant category icon, title, notes, due
                                             date/time and a checkbox. You can use system icons for categories,
                                             <ul>
@@ -678,8 +669,8 @@
                                 </li>
                                 <li>Task 4.5:
                                     <ul>
-                                        <li>When a todo is tapped the user should be navigated to the edit-todo screen.
-                                        </li>
+                                        <li>When a todo is tapped the user should be navigated to the edit-todo screen
+                                            (task 6 image link)</li>
                                         <li>When the checkbox is checked, the relevant todo status should be updated.
                                             You can use the <a
                                                 href="https://agon.madhack.ucscieee.com/#/todo/updateTodoStatus"
@@ -702,12 +693,12 @@
                     </div>
                     <div class="col-12 col-md-7">
                         <div>
-                            <h2 class="font-gilroy pb-2">5. Add Task Screen (10 marks)</h2>
+                            <h2 class="font-gilroy pb-2">5. Add Task Screen (5 marks)</h2>
 
                             <ul class="styled">
                                 <li>Task 5.1:
                                     <ul>
-                                        <li>Name the XML view as activity_add_task.xml or something similar.</li>
+                                        <li>Name the XML view as activity_add_task.xml or something similar</li>
                                         <li>Follow the image() to develop the xml.</li>
                                         <li>Create a form with the following fields:
                                             <ul>
@@ -720,13 +711,13 @@
                                             </ul>
                                         </li>
                                         <li>* marks the mandatory fields - implement suitable validation in the
-                                            frontend.</li>
+                                            frontend</li>
                                         <li>Use <a href="https://agon.madhack.ucscieee.com/#/category/getCategoryList"
                                                 target="_blank" class="snippet">/category</a> endpoint to retrieve the
-                                            categories for the dropdown.</li>
-                                        <li>Create a button to save the task using the endpoint: <a
+                                            categories to the dropdown.</li>
+                                        <li>Create a button to save the task using the endpoint <a
                                                 href="https://agon.madhack.ucscieee.com/#/todo/createTodo"
-                                                target="_blank" class="snippet">/todo.</a></li>
+                                                target="_blank" class="snippet">/todo</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -775,18 +766,18 @@
                                         <li>Update the todo with the endpoint <a
                                                 href="https://agon.madhack.ucscieee.com/#/todo/updateTodo"
                                                 target="_blank" class="snippet">/todo</a> when the relevant button is
-                                            clicked.</li>
+                                            clicked</li>
                                         <li>Delete the todo with the endpoint <a
                                                 href="https://agon.madhack.ucscieee.com/#/todo/deleteTodo"
                                                 target="_blank" class="snippet">/todo</a> when the relevant button is
-                                            clicked.</li>
-                                        <li>(You can navigate back to main screen after both cases).</li>
+                                            clicked</li>
+                                        <li>(You can navigate back to main screen after both cases)</li>
                                     </ul>
                                 </li>
                                 <li>Task 6.3:
                                     <ul>
-                                        <li>Implementation of action confirmation.</li>
-                                        <li>Implementation of snack bars (toast) to show feedback to the user.</li>
+                                        <li>Implementation of action confirmation</li>
+                                        <li>Implementation of snack bars (toast) to notify the user</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -814,8 +805,8 @@
                                     <ul>
                                         <li>Name the XML view as <span class="snippet">activity_edit_profile.xml</span>
                                             or
-                                            something similar.</li>
-                                        <li>Fill the form with existing data:</li>
+                                            something similar</li>
+                                        <li>Fill the form with existing data</li>
                                     </ul>
                                 </li>
                                 <li>Task 7.2:
@@ -849,15 +840,36 @@
 
             <div class="col-12 mb-4">
                 <div class="row mx-3 mx-md-5">
-                    <div class="col-12 col-md-5 pb-4">
-                        <a href="./assets/img/tasks-initial-round/about app.jpg" data-fancybox="group">
-                            <img src="./assets/img/tasks-initial-round/about app.jpg" alt="logo" class="img-fluid">
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-7">
+                    <div class="col-12">
                         <div>
+                            <h2 class="font-gilroy pb-2">Advanced tasks</h2>
 
-                            <h2 class="font-gilroy pb-2">8. About App page (5 marks)</h2>
+                            <p>Will be revealed in an hour!</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4 ">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12">
+                        <div>
+                            <h2 class="font-gilroy pb-2">8. Implement Search and filtration (15 marks)</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-4 ">
+                <div class="row mx-3 mx-md-5">
+                    <div class="col-12">
+                        <div>
+                            <h2 class="font-gilroy pb-2">9. Language Translation Task (5 marks)</h2>
+
+                            <!-- Name the XML view as activity_about_app.xml or something similar
+                            Create a list with your team members.
+                            Add a button which translates all the names to sinhala language. -->
 
                             <ul class="styled">
                                 <li>Task 9.1:
@@ -870,65 +882,31 @@
                                 </li>
                             </ul>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 mb-4">
-                <div class="row mx-3 mx-md-5">
-                    <div class="col-12">
-                        <div>
-                            <h2 class="font-gilroy pb-2 text-center">Advanced tasks</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 mb-4">
-                <div class="row mx-3 mx-md-5">
-                    <div class="col-12">
-                        <div>
-                            <h2 class="font-gilroy pb-2">9. Search and filter</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 mb-4">
-                <div class="row mx-3 mx-md-5">
-                    <div class="col-12">
-                        <div>
-                            <h2 class="font-gilroy pb-2">10. Implement search and filter by category for todos (10
-                                marks)
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 mb-4 d-none">
-                <div class="row mx-3 mx-md-5">
-                    <div class="col-12">
-                        <div>
-                            <h2 class="font-gilroy pb-2">11. Advanced Task 2: Language Translation</h2>
-
-                            <div>
-                                <p>Add a button in the about app page to translate only that page to one language other
-                                    than English (French for example)</p>
-                                <p>You can store the values in separate string resource bundles</p>
-                            </div>
+                            <p>
+                                Hint: Use a hardcoded separate string file.
+                            </p>
 
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-12 mb-4 d-none">
+
+
+            <!-- 10. Additional Tasks : Offline Support (10 marks )
+            You will get additional marks if you implement offline support to use the application.
+            This should be syncs with the server when something is edited in the todos and a blocking UI screen should
+            be added to improve the user experience.
+
+            Note: Only consider the todos list for this task.
+
+            Hint: Saves the todos in local storage and retrieves it when the app is open without internet access. -->
+
+            <div class="col-12 mb-4 ">
                 <div class="row mx-3 mx-md-5">
                     <div class="col-12">
                         <div>
-                            <h2 class="font-gilroy pb-2">10. Additional Marks: Offline Support (10 marks )</h2>
+                            <h2 class="font-gilroy pb-2">10. Additional Tasks : Offline Support (10 marks )</h2>
                             <p>
                                 You will get additional marks if you implement offline support to use the application.
                                 This should be synced with the server when something is edited in the todos and a
@@ -944,58 +922,32 @@
                 </div>
             </div>
 
-            <div class="col-12 mb-4">
+            <!-- 11. Additional Marks : Reminder Task (10 marks)
+            This is a task which gives you additional marks. You can set a reminder for each todo in your local storage
+            and create a reminder alert before 2 mins from the due time.
+
+            Since it is urgent, I did try to learn Android Native and make a simple todo application myself. I was
+            supposed to finish the application by the 26th of February 2023 at 11:59 pm. However, since it itself has
+            tasks to do, without a todo application, I would not be able to finish the application in time, which is
+            where you come in! You can find my code here:
+            (link to scaffolding)
+            If you are going to use my code, since your repository and mine have unrelated histories, you can download
+            my repository as a .zip file and extract it in your project directory. Good luck, and I hope you can manage
+            the tasks better than me! -->
+
+            <div class="col-12 mb-4 ">
                 <div class="row mx-3 mx-md-5">
                     <div class="col-12">
                         <div>
-                            <h2 class="font-gilroy pb-2">11. Additional Task 3: Scheduled notifications</h2>
+                            <h2 class="font-gilroy pb-2">11. Additional Marks : Reminder Task (10 marks)</h2>
                             <p>
-                                This is a complex task which can gain you a lot additional marks. You are required to
-                                schedule a notification at the due time (using
-                                technologies available in Android) for the tasks that the user sets as reminder enabled.
-                                Note that this notification
-                                should be generated by the app and has no connection with the backend.
+                                This is a task which gives you additional marks. You can set a reminder for each todo in
+                                your local storage and create a reminder alert before 2 mins from the due time.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 mb-4">
-                <div class="row mx-3 mx-md-5">
-                    <div class="col-12">
-                        <h2 class="font-gilroy pb-2">12. Final Additional Task: Offline mode</h2>
-                        <p>
-                            This is a very complex task which can gain you a lot additional marks.
-                            The user should be able to use the app offline, specifically the
-                            following things:
-                        </p>
-
-                        <ul class="styled">
-                            <li>View todos</li>
-                            <li>Add todo</li>
-                            <li>Edit todo</li>
-                            <li>Delete todo</li>
-                        </ul>
-
-                        <p>
-                            When the app is connected to the server, it should synchronize with the
-                            server data and a blocking UI screen should
-                            be added to improve the user experience.
-                        </p>
-                        <p>
-                            Note: You do noy have to consider the edit-user functionality for this task.
-                        </p>
-                        <p>
-
-                            Hint: Save the todos in local storage or a DB like SQLite and retrieve it
-                            when the app is opened without internet access.
-                            When the app gets internet access, send the changed data to the server.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
 
         </div>
     </div>
@@ -1027,12 +979,10 @@
 
                             <ul class="styled">
                                 <li>
-                                    <a href="https://madhack.ucscieee.com/agon_figma" target="_blank">Figma
-                                        prototype</a>
+                                    <a href="https://madhack.ucscieee.com/agon_figma" target="_blank">Figma prototype</a>
                                 </li>
                                 <li>
-                                    <a href="https://agon.madhack.ucscieee.com/" target="_blank">REST API and
-                                        documentation:</a>
+                                    <a href="https://agon.madhack.ucscieee.com/" target="_blank">REST API and documentation:</a>
                                 </li>
                                 <li>Basic app scaffolding (optional to use):
                                     <a href="https://github.com/MADHack-Agon/taskopolis-sample" target="_blank">
@@ -1040,8 +990,7 @@
                                     </a>
                                 </li>
                                 <li>App Logo:
-                                    <a href="https://raw.githubusercontent.com/MADHack-Agon/.github/main/img/app_icon.svg"
-                                        target="_blank">
+                                    <a href="https://raw.githubusercontent.com/MADHack-Agon/.github/main/img/app_icon.svg" target="_blank">
                                         https://raw.githubusercontent.com
                                     </a>
                                 </li>
